@@ -9,7 +9,7 @@ const Navbar:React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const handleMenu = () => setMenuOpen(!menuOpen)
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex items-center justify-between">
       <div className="flex items-center">
         <Image src="/logo.svg" alt="Logo" width={100} height={100} />
         <h1 className="hidden">Trocha Adventour</h1>
