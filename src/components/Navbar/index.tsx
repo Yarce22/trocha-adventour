@@ -2,7 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+
 import { MobileMenu } from '../BurgerMenu'
+import logo from '@/app/logo_trocha.svg'
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -39,11 +42,14 @@ const Navbar: React.FC = () => {
             {/* Logo */}
             <Link
               href="/"
-              className={`text-2xl lg:text-3xl font-bold transition-colors duration-300 ${
+              className={`flex items-center gap-4 text-2xl lg:text-3xl font-bold transition-colors duration-300 ${
                 isScrolled ? 'text-green-600' : 'text-white'
               }`}
             >
-              Trocka Adventure
+              <div className='w-12 h-12'>
+                <Image src={logo} alt='logo' className='w-full h-full object-cover' />
+              </div>
+              Trocha Adventure
             </Link>
 
             {/* Desktop Navigation */}

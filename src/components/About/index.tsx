@@ -64,7 +64,7 @@ const About: React.FC = () => {
 
             {/* CTA Button */}
             <div className="pt-4">
-              <button className="group relative inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl active:scale-95">
+              <button className="group relative inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:cursor-pointer hover:scale-105 hover:shadow-xl active:scale-95">
                 <span className="text-lg">Conocer más</span>
                 <div className="w-6 h-6 flex items-center justify-center bg-white/20 rounded-full group-hover:translate-x-1 transition-transform duration-300">
                   <svg 
@@ -87,7 +87,7 @@ const About: React.FC = () => {
 
           {/* Right Column - Image */}
           <div className="relative order-first lg:order-last">
-            <div className="relative aspect-[4/5] lg:aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-[1/1] w-full rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src={coffeeImage}
                 alt="Granos de café en manos - Cultura cafetera colombiana"
