@@ -13,6 +13,10 @@
 
 @theme {
   --animate-infinite-scroll: infinite-scroll 30s linear infinite;
+
+  --color-primary: #72b334ff;
+  --color-secondary: #f1f1f1;
+  --color-tertiary: #010101;
 }
 
 @keyframes infinite-scroll {

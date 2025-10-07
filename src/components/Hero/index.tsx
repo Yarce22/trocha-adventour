@@ -61,8 +61,12 @@ const Hero: React.FC = () => {
                 <p className="text-white">{image.description}</p>
 
                 <div className="flex gap-4">
-                  <button className="bg-white text-black py-2 px-4 rounded-full font-semibold">Ver más</button>
-                  <button className="bg-white text-black py-2 px-4 rounded-full font-semibold">Reservar</button>
+                  <a href="/rutas">
+                    <button className="bg-white text-black py-2 px-4 rounded-full font-semibold hover:cursor-pointer">Ver más</button>
+                  </a>
+                  <a href="#contacto">
+                    <button className="bg-white text-black py-2 px-4 rounded-full font-semibold hover:cursor-pointer">Reservar</button>
+                  </a>
                 </div>
               </div>
             </div>

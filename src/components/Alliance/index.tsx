@@ -87,7 +87,7 @@ const Alliance: React.FC = () => {
                     {/* Logo Container */}
                     <div className="relative w-20 h-20 md:w-24 md:h-24 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-gray-50 transition-colors">
                       <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-lg flex items-center justify-center">
-                        {/* Aquí van tus logos reales */}
+                        {/* Aquí van los logos reales */}
                         <span className="text-2xl md:text-3xl font-bold text-gray-600">
                           {partner.name.charAt(0)}
                         </span>

@@ -69,15 +69,13 @@ const Navbar: React.FC = () => {
             </ul>
 
             {/* CTA Button - Desktop */}
-            <button
-              className={`hidden lg:block px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                isScrolled
-                  ? 'bg-green-600 hover:bg-green-700 text-white'
-                  : 'bg-white hover:bg-gray-100 text-green-600'
-              }`}
-            >
-              Reservar ahora
-            </button>
+            <a href="#contacto">
+              <button
+                className={`hidden lg:block px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:cursor-pointer ${isScrolled ? 'bg-green-600 hover:bg-green-700 text-white' : 'bg-white hover:bg-gray-100 text-green-600'}`}
+              >
+                Reservar ahora
+              </button>
+            </a>
 
             {/* Mobile Menu Button */}
             <button

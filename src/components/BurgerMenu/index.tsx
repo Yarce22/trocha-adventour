@@ -62,7 +62,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
             onClick={onClose}
             className="text-2xl font-bold text-green-600"
           >
-            Trocka Adventure
+            Trocha Adventure
           </Link>
           <button
             onClick={onClose}

@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import logo from '@/app/logo_trocha.svg'
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -55,12 +57,10 @@ const Footer: React.FC = () => {
           {/* Company Info Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
+              <div className='w-12 h-12'>
+                <Image src={logo} alt='logo' className='w-full h-full object-cover' />
               </div>
-              <span className="text-xl font-bold text-white">Trocka Adventure</span>
+              <span className="text-xl font-bold text-white">Trocha Adventure</span>
             </Link>
             
             <p className="text-gray-400 mb-6 leading-relaxed">
@@ -225,7 +225,7 @@ const Footer: React.FC = () => {
 
           {/* Copyright */}
           <div className="text-center text-sm text-gray-500 mb-4">
-            © 2025 Trocka Adventure. Todos los derechos reservados.
+            © 2025 Trocha Adventure. Todos los derechos reservados.
           </div>
 
           {/* Certifications */}
