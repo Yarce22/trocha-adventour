@@ -9,6 +9,13 @@ interface Asset {
   };
 }
 
+interface Value {
+  fields: {
+    title: string;
+    description: string;
+  };
+}
+
 interface AboutData {
   banner: Asset;
   whoUs: string;
@@ -16,6 +23,6 @@ interface AboutData {
   mision: string;
   vision: string;
   title: string;
-  values: string;
-  description: string;
+  values: Value[];
+  valuesDescription: string;
 }
