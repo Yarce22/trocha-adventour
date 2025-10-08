@@ -1,78 +1,17 @@
-'use client'
+import { SliderImages } from "../SliderImages"
+import { getHeroImgs } from "@/lib/contentfulServices"
 
-import Image from "next/image"
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 
-import hero1 from '@/assets/images/hero_1.jpg'
-import hero2 from '@/assets/images/hero_2.jpeg'
-import hero3 from '@/assets/images/hero_3.jpeg'
-
-const Hero: React.FC = () => {
-  const sliderImages = [
-    { src: hero1, alt: "Senderismo en montaña", title: "Descubre el Eje Cafetero", subtitle: "Aventuras únicas en Santa Rosa de Cabal", description: "Explora los senderos más espectaculares de Colombia con guías expertos y vive una experiencia inolvidable." },
-    { src: hero2, alt: "Rutas de aventura", title: "Paisajes de Ensueño", subtitle: "Montañas, bosques y cascadas te esperan", description: "Sumérgete en la naturaleza más pura y conecta con la biodiversidad del eje cafetero colombiano." },
-    { src: hero3, alt: "Expediciones guiadas", title: "Aventura Garantizada", subtitle: "Equipos profesionales y rutas seguras", description: "Con más de 10 años de experiencia, te garantizamos aventuras seguras y emocionantes para todos los niveles." },  
-  ]
+const Hero: React.FC = async () => {
+  const heroImgs = await getHeroImgs()
 
   return (
     <section className="h-screen relative">
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay, EffectFade]}
-        navigation={{
-          nextEl: '.swiper-button-next-custom',
-          prevEl: '.swiper-button-prev-custom',
-        }}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-          el: '.swiper-pagination-custom',
-        }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false,
-        }}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        loop={true}
-        speed={1000}
-        className="h-full w-full"
-      >
-        {sliderImages.map((image, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full h-full">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                priority={index === 0}
-                className="object-cover"
-                sizes="100vw"
-              />
-
-              <div className="absolute w-full h-full flex flex-col gap-4 px-6 items-center justify-center bg-black/50 text-center">
-                <h2 className="text-4xl font-bold text-white">{image.title}</h2>
-                <h3 className="text-2xl font-semibold text-white">{image.subtitle}</h3>
-                <p className="text-white">{image.description}</p>
-
-                <div className="flex gap-4">
-                  <a href="/rutas">
-                    <button className="bg-white text-black py-2 px-4 rounded-full font-semibold hover:cursor-pointer">Ver más</button>
-                  </a>
-                  <a href="#contacto">
-                    <button className="bg-white text-black py-2 px-4 rounded-full font-semibold hover:cursor-pointer">Reservar</button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <SliderImages sliderImages={heroImgs} />
 
       <div className="swiper-pagination-custom absolute bottom-8 left-0 right-0 z-20 flex justify-center items-center gap-2
         [&_.swiper-pagination-bullet]:w-3 

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { getAbout } from "@/contentful/route";
+import { getAbout } from "@/lib/contentfulServices";
+
 export default async function AboutPage() {
     const about = await getAbout();
     console.log(about);

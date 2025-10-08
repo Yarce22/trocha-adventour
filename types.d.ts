@@ -3,8 +3,6 @@ interface Asset {
     title: string;
     file: {
       url: string;
-      fileName: string;
-      contentType: string;
     };
   };
 }
@@ -25,4 +23,11 @@ interface AboutData {
   title: string;
   values: Value[];
   valuesDescription: string;
+}
+
+interface HeroImg {
+  title: string;
+  subtitle: string;
+  description: string;
+  img: Asset;
 }
