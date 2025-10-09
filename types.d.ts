@@ -31,3 +31,14 @@ interface HeroImg {
   description: string;
   img: Asset;
 }
+
+interface Route {
+  id: string,
+  title: string,
+  description: string,
+  description2: string,
+  difficulty: string,
+  time: string,
+  image: Asset[],
+  characteristics: string[],
+}
