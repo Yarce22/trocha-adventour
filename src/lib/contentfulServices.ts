@@ -49,3 +49,22 @@ export const getRoutes = async (): Promise<Route[]> => {
 
   return transformRoutes as unknown as Route[]
 }
+
+export const getAllies = async (): Promise<Ally[]> => {
+  const response = await contentfulClient.getEntries({
+    content_type: 'allies'
+  })
+
+  if (!response.items) {
+    throw new Error('No se encontraron rutas');
+  }
+
+  const transformAllies = response.items.map((item) => ({
+    name: item.fields.name,
+    description: item.fields.description,
+    logo: item.fields.logo,
+    url: item.fields.allyPage,
+  }))
+
+  return transformAllies as unknown as Ally[]
+}

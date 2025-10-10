@@ -42,3 +42,10 @@ interface Route {
   image: Asset[],
   characteristics: string[],
 }
+
+interface Ally {
+  name: string,
+  description: string,
+  logo: Asset,
+  url: string,
+}

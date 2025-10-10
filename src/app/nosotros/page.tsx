@@ -3,8 +3,6 @@ import { getAbout } from "@/lib/contentfulServices";
 
 export default async function AboutPage() {
     const about = await getAbout();
-    console.log(about);
-    
     
     return (
         <main className="">

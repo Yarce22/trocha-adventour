@@ -22,7 +22,7 @@ const Form: React.FC = () => {
     // Aquí puedes agregar la lógica de envío (Server Action, API Route, etc.)
     await new Promise(resolve => setTimeout(resolve, 2000)) // Simulación
     
-    console.log('Form submitted:', formData)
+    ('Form submitted:', formData)
     setIsSubmitting(false)
     
     // Reset form

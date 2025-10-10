@@ -1,51 +1,9 @@
+import { getAllies } from '@/lib/contentfulServices'
 import Image from 'next/image'
 
-interface Partner {
-  id: number
-  name: string
-  description: string
-  logo: string
-}
-
-const Alliance: React.FC = () => {
-  const partners: Partner[] = [
-    {
-      id: 1,
-      name: 'Hotel Termales Santa Rosa',
-      description: 'Hospedaje de lujo con aguas termales naturales',
-      logo: '/logos/hotel-termales.png'
-    },
-    {
-      id: 2,
-      name: 'Turismo Eje Cafetero',
-      description: 'Agencia oficial de turismo regional',
-      logo: '/logos/turismo-eje.png'
-    },
-    {
-      id: 3,
-      name: 'Outdoor Gear Colombia',
-      description: 'Equipos profesionales para montañismo',
-      logo: '/logos/outdoor-gear.png'
-    },
-    {
-      id: 4,
-      name: 'Café de los Andes',
-      description: 'Café premium de la región cafetera',
-      logo: '/logos/cafe-andes.png'
-    },
-    {
-      id: 5,
-      name: 'Parques Nacionales',
-      description: 'Sistema de áreas protegidas de Colombia',
-      logo: '/logos/parques-nacionales.png'
-    },
-    {
-      id: 6,
-      name: 'Aviatur',
-      description: 'Líder en viajes y turismo en Colombia',
-      logo: '/logos/aviatur.png'
-    }
-  ]
+const Alliance: React.FC = async () => {
+  const partners = await getAllies()
+  console.log(partners)
 
   return (
     <section className="py-16 md:py-24 bg-gray-50 overflow-hidden">
@@ -78,19 +36,23 @@ const Alliance: React.FC = () => {
           <div className="flex">
             {/* First Set */}
             <div className="flex animate-infinite-scroll">
-              {partners.map((partner) => (
+              {partners.map((partner, index) => (
                 <div
-                  key={`first-${partner.id}`}
-                  className="flex-shrink-0 mx-4 md:mx-8"
+                  key={`first-${index}`}
+                  className="flex-shrink-0 mx-4 md:mx-8 cursor-pointer"
                 >
-                  <div className="group bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 w-48 md:w-56 h-48 md:h-56 flex flex-col items-center justify-center gap-4 hover:-translate-y-2">
+                  <a href={partner.url} target="_blank" rel="noopener noreferrer" className="group bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 w-48 md:w-56 h-48 md:h-56 flex flex-col items-center justify-center gap-4 hover:-translate-y-2">
                     {/* Logo Container */}
                     <div className="relative w-20 h-20 md:w-24 md:h-24 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-gray-50 transition-colors">
-                      <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-lg flex items-center justify-center">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center">
                         {/* Aquí van los logos reales */}
-                        <span className="text-2xl md:text-3xl font-bold text-gray-600">
-                          {partner.name.charAt(0)}
-                        </span>
+                        <Image
+                          src={partner.logo.fields.file.url.replace('//', 'https://')}
+                          alt={partner.name}
+                          width={100}
+                          height={100}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                     </div>
 
@@ -103,25 +65,29 @@ const Alliance: React.FC = () => {
                         {partner.description}
                       </p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>
 
             {/* Second Set (Duplicate for seamless loop) */}
             <div className="flex animate-infinite-scroll" aria-hidden="true">
-              {partners.map((partner) => (
+              {partners.map((partner, index) => (
                 <div
-                  key={`second-${partner.id}`}
-                  className="flex-shrink-0 mx-4 md:mx-8"
+                  key={`second-${index}`}
+                  className="flex-shrink-0 mx-4 md:mx-8 cursor-pointer"
                 >
-                  <div className="group bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 w-48 md:w-56 h-48 md:h-56 flex flex-col items-center justify-center gap-4 hover:-translate-y-2">
+                  <a href={partner.url} target="_blank" rel="noopener noreferrer" className="group bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 w-48 md:w-56 h-48 md:h-56 flex flex-col items-center justify-center gap-4 hover:-translate-y-2">
                     {/* Logo Container */}
                     <div className="relative w-20 h-20 md:w-24 md:h-24 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-gray-50 transition-colors">
-                      <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-300 rounded-lg flex items-center justify-center">
-                        <span className="text-2xl md:text-3xl font-bold text-gray-600">
-                          {partner.name.charAt(0)}
-                        </span>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center">
+                        <Image
+                          src={partner.logo.fields.file.url.replace('//', 'https://')}
+                          alt={partner.name}
+                          width={100}
+                          height={100}
+                          className="w-full h-full object-contain"
+                        />
                       </div>
                     </div>
 
@@ -134,7 +100,7 @@ const Alliance: React.FC = () => {
                         {partner.description}
                       </p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>

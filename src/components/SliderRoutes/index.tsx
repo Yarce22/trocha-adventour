@@ -22,8 +22,6 @@ const SliderRoutes: React.FC<{ routes: Route[] }> = ({ routes }) => {
     }
   }
 
-  console.log(routes)
-
   return (
     <>
       {/* Scrollable Cards Container with Navigation */}

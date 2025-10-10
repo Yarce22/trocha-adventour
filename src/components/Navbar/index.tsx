@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
               <div className='w-12 h-12'>
                 <Image src={logo} alt='logo' className='w-full h-full object-cover' />
               </div>
-              Trocha Adventure
+              Trocha Adventour
             </Link>
 
             {/* Desktop Navigation */}

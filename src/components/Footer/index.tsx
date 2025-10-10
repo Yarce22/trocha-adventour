@@ -16,7 +16,6 @@ const Footer: React.FC = () => {
     // Aquí va la lógica de suscripción al newsletter
     await new Promise(resolve => setTimeout(resolve, 1500))
     
-    console.log('Newsletter subscription:', email)
     setEmail('')
     setIsSubmitting(false)
   }
