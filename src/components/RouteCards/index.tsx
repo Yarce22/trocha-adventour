@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const RouteCards:React.FC<{routes: Route[]}> = ({ routes }) => {
   return (
@@ -27,12 +28,12 @@ const RouteCards:React.FC<{routes: Route[]}> = ({ routes }) => {
                 </div>
 
                 <div className="flex justify-between">
-                  <a
+                  <Link
                     href={`/rutas/${route.id}`}
                     className="bg-primary text-secondary hover:cursor-pointer hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
                   >
                     Conoce más
-                  </a>
+                  </Link>
                   <span
                     className={`hidden px-3 py-1.5 rounded-full text-sm font-semibold md:flex items-center gap-1.5 backdrop-blur-sm ${route.difficulty === 'Fácil'&& 'bg-green-200/90 text-green-700' || route.difficulty === 'Medio' && 'bg-yellow-200/90 text-yellow-700' || route.difficulty === 'Difícil'&& 'bg-red-200/90 text-red-700'}`} 
                   >
