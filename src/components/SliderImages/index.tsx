@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules'
+import Link from 'next/link'
 
 const SliderImages: React.FC<{ sliderImages: HeroImg[] }> = ({ sliderImages }) => {
     
@@ -47,12 +48,12 @@ const SliderImages: React.FC<{ sliderImages: HeroImg[] }> = ({ sliderImages }) =
               <p className="text-white">{image.description}</p>
 
               <div className="flex gap-4">
-                <a href="/rutas">
+                <Link href="/rutas">
                   <button className="bg-white text-black py-2 px-4 rounded-full font-semibold hover:cursor-pointer">Ver más</button>
-                </a>
-                <a href="#contacto">
+                </Link>
+                <Link href="#contacto">
                   <button className="bg-white text-black py-2 px-4 rounded-full font-semibold hover:cursor-pointer">Reservar</button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
