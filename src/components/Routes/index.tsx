@@ -18,7 +18,7 @@ const Routes: React.FC = async () => {
           </p>
         </div>
 
-        <SliderRoutes routes={routes} />
+        <SliderRoutes routes={routes.routes} />
         
       </div>
     </section>

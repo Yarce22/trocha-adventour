@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 const RouteCards:React.FC<{routes: Route[]}> = ({ routes }) => {
+  
   return (
     <section className="flex flex-col gap-10">
       <h3 className="text-2xl font-bold text-center">Nuestras rutas</h3>
@@ -14,7 +15,7 @@ const RouteCards:React.FC<{routes: Route[]}> = ({ routes }) => {
             >
               <div className="max-h-1/2">
                 <Image
-                  src={route.image[0].fields.file.url.replace('//', 'https://')}
+                  src={route.tourImages[0].fields.file.url.replace('//', 'https://')}
                   alt={route.title}
                   width={500}
                   height={500}

@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState, useRef } from 'react'
 
 const SliderRoutes: React.FC<{ routes: Route[] }> = ({ routes }) => {
@@ -9,7 +10,7 @@ const SliderRoutes: React.FC<{ routes: Route[] }> = ({ routes }) => {
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 400 // Ajusta según el ancho de tus cards
+      const scrollAmount = 400
       const currentScroll = scrollContainerRef.current.scrollLeft
       const targetScroll = direction === 'left' 
         ? currentScroll - scrollAmount 
@@ -21,6 +22,9 @@ const SliderRoutes: React.FC<{ routes: Route[] }> = ({ routes }) => {
       })
     }
   }
+
+  console.log(routes);
+  
 
   return (
     <>
@@ -106,7 +110,7 @@ const SliderRoutes: React.FC<{ routes: Route[] }> = ({ routes }) => {
                       <div className="relative w-full h-full bg-gradient-to-br from-gray-800 to-gray-900">
                         {/* Aquí van tus imágenes reales */}
                         <Image
-                            src={route.image[0].fields.file.url.replace('//', 'https://')}
+                            src={route.tourImages[0].fields.file.url.replace('//', 'https://')}
                             alt={route.title}
                             fill
                             className="object-cover"
@@ -161,9 +165,9 @@ const SliderRoutes: React.FC<{ routes: Route[] }> = ({ routes }) => {
                         </ul>
 
                         {/* Button */}
-                        <button className="w-full bg-white hover:bg-green-500 text-gray-900 hover:cursor-pointer hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95">
+                        <Link href={`/rutas`} className="w-full bg-white hover:bg-green-500 text-gray-900 hover:cursor-pointer hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95">
                           Conocer más
-                        </button>
+                        </Link>
                       </div>
                     </div>
 

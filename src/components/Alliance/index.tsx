@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 const Alliance: React.FC = async () => {
   const partners = await getAllies()
-  console.log(partners)
 
   return (
     <section className="py-16 md:py-24 bg-gray-50 overflow-hidden">

@@ -1,3 +1,10 @@
+interface ContentfulEntry<T> {
+  sys: {
+    id: string;
+  };
+  fields: T;
+}
+
 interface Asset {
   fields: {
     title: string;
@@ -39,8 +46,23 @@ interface Route {
   description2: string,
   difficulty: string,
   time: string,
-  image: Asset[],
+  tourImages: Asset[],
   characteristics: string[],
+  step1: string,
+  step2: string,
+  step3: string,
+  imgStep1: Asset,
+  imgStep2: Asset,
+  imgStep3: Asset,
+  imgEnding: Asset,
+}
+
+interface Routes {
+  id: string,
+  banner: Asset,
+  title: string,
+  description: string,
+  routes: Route[],
 }
 
 interface Ally {

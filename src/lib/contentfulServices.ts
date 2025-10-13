@@ -27,27 +27,49 @@ export const getHeroImgs = async (): Promise<HeroImg[]> => {
   return transformHeroImgs as unknown as HeroImg[]
 }
 
-export const getRoutes = async (): Promise<Route[]> => {
+export const getRoutes = async (): Promise<Routes> => {
   const response = await contentfulClient.getEntries({
-    content_type: 'route'
+    content_type: 'routes'
   })
 
   if (!response.items) {
     throw new Error('No se encontraron rutas');
   }
 
-  const transformRoutes = response.items.map((item) => ({
-    id: item.sys.id,
-    title: item.fields.title,
-    description: item.fields.description,
-    description2: item.fields.description2,
-    difficulty: item.fields.difficulty,
-    time: item.fields.time,
-    image: item.fields.tourImages,
-    characteristics: item.fields.characteristics,
+  const routeData = response.items[0].fields.route;
+  if (!Array.isArray(routeData)) {
+    throw new Error('Expected route to be an array');
+  }
+
+  const typedRouteData = routeData as unknown as Array<ContentfulEntry<Route>>;
+
+  const transformTours = typedRouteData.map((item) => ({
+    id: item?.sys.id,
+    title: item?.fields.title,
+    description: item?.fields.description,
+    description2: item?.fields.description2,
+    difficulty: item?.fields.difficulty,
+    time: item?.fields.time,
+    tourImages: item?.fields.tourImages,
+    characteristics: item?.fields.characteristics,
+    step1: item?.fields.step1,
+    step2: item?.fields.step2,
+    step3: item?.fields.step3,
+    imgStep1: item?.fields.imgStep1,
+    imgStep2: item?.fields.imgStep2,
+    imgStep3: item?.fields.imgStep3,
+    imgEnding: item?.fields.imgEnding,
   }))
 
-  return transformRoutes as unknown as Route[]
+  const transformRoutes = response.items.map((item) => ({
+    id: item?.sys.id,
+    banner: item?.fields.banner,
+    title: item?.fields.title,
+    description: item?.fields.description,
+    routes: transformTours,
+  }))
+
+  return transformRoutes[0] as unknown as Routes
 }
 
 export const getRoutesById = async (id: string): Promise<Route[]> => {
