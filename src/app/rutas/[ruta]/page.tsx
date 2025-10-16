@@ -16,8 +16,8 @@ const RouteDetail = async ({ params }: { params: { ruta: string } }) => {
           <Image 
             src={route.tourImages[0].fields.file.url.replace('//', 'https://')}
             alt={route.tourImages[0].fields.title}
-            width={1}
-            height={1}
+            width={1000}
+            height={1000}
             className="w-full h-full object-cover"
           />
         </div>
@@ -106,7 +106,7 @@ const RouteDetail = async ({ params }: { params: { ruta: string } }) => {
           alt={route.imgEnding.fields.title}
           width={500}
           height={500}
-          className="absolute left-0 -top-10 w-full h-full object-cover"
+          className="absolute left-0 -top-10 xl:-top-16 w-full h-full object-cover"
         />
       </div>
     </main>
