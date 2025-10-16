@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
     { name: 'Inicio', href: '/' },
     { name: 'Rutas', href: '/rutas' },
     { name: 'Nosotros', href: '/nosotros' },
-    { name: 'Contacto', href: '/contacto' }
+    { name: 'Contacto', href: '#contacto' }
   ]
 
   return (
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-lg shadow-lg py-3'
+            ? 'bg-secondary/95 backdrop-blur-lg shadow-lg py-3'
             : 'bg-transparent py-5'
         }`}
       >
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/"
               className={`flex items-center gap-4 text-2xl lg:text-3xl font-bold transition-colors duration-300 ${
-                isScrolled ? 'text-green-600' : 'text-white'
+                isScrolled ? 'text-primary' : 'text-secondary'
               }`}
             >
               <div className='w-12 h-12'>
@@ -57,8 +57,8 @@ const Navbar: React.FC = () => {
                 <li key={index}>
                   <Link
                     href={item.href}
-                    className={`text-base font-medium transition-colors duration-300 hover:text-green-500 ${
-                      isScrolled ? 'text-gray-700' : 'text-white/90'
+                    className={`text-base font-medium transition-colors duration-300 hover:text-primary ${
+                      isScrolled ? 'text-tertiary' : 'text-secondary/90'
                     }`}
                   >
                     {item.name}
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
             {/* CTA Button - Desktop */}
             <a href="#contacto">
               <button
-                className={`hidden lg:block px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:cursor-pointer ${isScrolled ? 'bg-green-600 hover:bg-green-700 text-white' : 'bg-white hover:bg-gray-100 text-green-600'}`}
+                className={`hidden lg:block px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:cursor-pointer ${isScrolled ? 'bg-primary hover:bg-primary/80 text-secondary' : 'bg-secondary hover:bg-gray-100 text-primary'}`}
               >
                 Reservar ahora
               </button>
@@ -81,8 +81,8 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(true)}
               className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${
                 isScrolled
-                  ? 'text-gray-700 hover:bg-gray-100'
-                  : 'text-white hover:bg-white/10'
+                  ? 'text-tertiary hover:bg-gray-100'
+                  : 'text-secondary hover:bg-secondary/10'
               }`}
               aria-label="Abrir menú"
             >

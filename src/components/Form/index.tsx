@@ -61,11 +61,11 @@ const Form: React.FC = () => {
   }
 
   return (
-    <section id="contacto" className="py-16 md:py-24 bg-white">
+    <section id="contacto" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tertiary mb-4 md:mb-6">
             Planea tu Aventura
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -78,7 +78,7 @@ const Form: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
           {/* Left Column - Form */}
           <div className="bg-gray-50 rounded-2xl p-6 md:p-8 lg:p-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-tertiary mb-6 md:mb-8">
               Solicita Información
             </h3>
 
@@ -97,7 +97,7 @@ const Form: React.FC = () => {
                     onChange={handleChange}
                     placeholder="Tu nombre completo"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200 bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-secondary"
                   />
                 </div>
 
@@ -113,7 +113,7 @@ const Form: React.FC = () => {
                     onChange={handleChange}
                     placeholder="tu@email.com"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200 bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-secondary"
                   />
                 </div>
               </div>
@@ -131,7 +131,7 @@ const Form: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+57 300 123 4567"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200 bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:primary focus:border-transparent outline-none transition-all duration-200 bg-secondary"
                   />
                 </div>
 
@@ -144,7 +144,7 @@ const Form: React.FC = () => {
                     name="participants"
                     value={formData.participants}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200 bg-white appearance-none cursor-pointer"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-secondary appearance-none cursor-pointer"
                   >
                     <option value="">Selecciona cantidad</option>
                     <option value="1">1 persona</option>
@@ -166,7 +166,7 @@ const Form: React.FC = () => {
                     name="route"
                     value={formData.route}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200 bg-white appearance-none cursor-pointer"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-secondary appearance-none cursor-pointer"
                   >
                     <option value="">Selecciona una ruta</option>
                     <option value="Cascada El Ensueño">Cascada El Ensueño</option>
@@ -187,7 +187,7 @@ const Form: React.FC = () => {
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200 bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-secondary"
                   />
                 </div>
               </div>
@@ -204,7 +204,7 @@ const Form: React.FC = () => {
                   onChange={handleChange}
                   rows={4}
                   placeholder="Cuéntanos más sobre lo que buscas en tu aventura..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200 bg-white resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-secondary resize-none"
                 />
               </div>
 
@@ -212,7 +212,7 @@ const Form: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+                className="w-full bg-primary hover:bg-primary/80 disabled:bg-gray-400 text-secondary font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>
@@ -231,7 +231,7 @@ const Form: React.FC = () => {
                   </>
                 )}
               </button>
-              {status === 'exito' && <p className="text-green-500">¡Mensaje enviado con éxito!</p>}
+              {status === 'exito' && <p className="text-primary">¡Mensaje enviado con éxito!</p>}
               {status === 'error' && <p className="text-red-500">Hubo un error. Inténtalo de nuevo.</p>}
             </form>
           </div>
@@ -246,14 +246,14 @@ const Form: React.FC = () => {
               <div className="space-y-6">
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex-shrink-0 w-14 h-14 bg-secondary rounded-xl flex items-center justify-center">
+                    <svg className="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">Teléfono</h4>
-                    <a href="tel:+573162345678" className="text-green-600 hover:text-green-700 font-semibold text-lg transition-colors">
+                    <a href="tel:+573162345678" className="text-primary hover:text-primary/90 font-semibold text-lg transition-colors">
                       +57 316 234 5678
                     </a>
                     <p className="text-sm text-gray-500 mt-1">Lun - Dom: 7:00 AM - 8:00 PM</p>
@@ -262,15 +262,15 @@ const Form: React.FC = () => {
 
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex-shrink-0 w-14 h-14 bg-secondary rounded-xl flex items-center justify-center">
+                    <svg className="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">Email</h4>
-                    <a href="mailto:trochaadventour@gmail.com" className="text-green-600 hover:text-green-700 font-semibold transition-colors break-all">
+                    <a href="mailto:trochaadventour@gmail.com" className="text-primary hover:text-primary/90 font-semibold transition-colors break-all">
                       trochaadventour@gmail.com
                     </a>
                     <p className="text-sm text-gray-500 mt-1">Respuesta en 24 horas</p>
@@ -279,14 +279,14 @@ const Form: React.FC = () => {
 
                 {/* Location */}
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex-shrink-0 w-14 h-14 bg-secondary rounded-xl flex items-center justify-center">
+                    <svg className="w-7 h-7 text-primary" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">Ubicación</h4>
-                    <p className="text-green-600 font-semibold">Santa Rosa de Cabal, Risaralda</p>
+                    <p className="text-primary font-semibold">Santa Rosa de Cabal, Risaralda</p>
                     <p className="text-sm text-gray-500 mt-1">Centro de la ciudad</p>
                   </div>
                 </div>
@@ -294,7 +294,7 @@ const Form: React.FC = () => {
             </div>
 
             {/* Social Media Card */}
-            <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 md:p-8 text-white">
+            <div className="bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-6 md:p-8 text-secondary">
               <h4 className="text-xl font-bold mb-4">Síguenos en Redes Sociales</h4>
               <p className="text-green-50 mb-6">
                 Mantente al día con nuestras aventuras y descubre contenido exclusivo
