@@ -14,28 +14,44 @@ const Form: React.FC = () => {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState('')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    // Aquí puedes agregar la lógica de envío (Server Action, API Route, etc.)
-    await new Promise(resolve => setTimeout(resolve, 2000)) // Simulación
-    
-    console.log('Form submitted:', formData)
-    setIsSubmitting(false)
-    
-    // Reset form
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      participants: '',
-      route: '',
-      date: '',
-      message: ''
-    })
-  }
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/resend', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus('exito');
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          participants: '',
+          route: '',
+          date: '',
+          message: ''
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      setStatus('error');
+    }
+    setIsSubmitting(false);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -153,11 +169,11 @@ const Form: React.FC = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all duration-200 bg-white appearance-none cursor-pointer"
                   >
                     <option value="">Selecciona una ruta</option>
-                    <option value="cascada">Cascada El Ensueño</option>
-                    <option value="pico">Pico Nevado Explorer</option>
-                    <option value="cafe">Ruta del Café</option>
-                    <option value="laguna">Laguna Escondida</option>
-                    <option value="otra">Otra ruta</option>
+                    <option value="Cascada El Ensueño">Cascada El Ensueño</option>
+                    <option value="Pico Nevado Explorer">Pico Nevado Explorer</option>
+                    <option value="Ruta del Café">Ruta del Café</option>
+                    <option value="Laguna Escondida">Laguna Escondida</option>
+                    <option value="Otra ruta">Otra ruta</option>
                   </select>
                 </div>
 
@@ -215,6 +231,8 @@ const Form: React.FC = () => {
                   </>
                 )}
               </button>
+              {status === 'exito' && <p className="text-green-500">¡Mensaje enviado con éxito!</p>}
+              {status === 'error' && <p className="text-red-500">Hubo un error. Inténtalo de nuevo.</p>}
             </form>
           </div>
 
@@ -252,8 +270,8 @@ const Form: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">Email</h4>
-                    <a href="mailto:info@trockaadventure.com" className="text-green-600 hover:text-green-700 font-semibold transition-colors break-all">
-                      info@trockaadventure.com
+                    <a href="mailto:trochaadventour@gmail.com" className="text-green-600 hover:text-green-700 font-semibold transition-colors break-all">
+                      trochaadventour@gmail.com
                     </a>
                     <p className="text-sm text-gray-500 mt-1">Respuesta en 24 horas</p>
                   </div>
