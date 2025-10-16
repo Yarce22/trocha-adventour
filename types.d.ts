@@ -52,7 +52,7 @@ interface Route {
   step2: string,
   step3: string,
   imgStep1: Asset,
-  imgStep2: Asset,
+  imgSetp2: Asset,
   imgStep3: Asset,
   imgEnding: Asset,
 }

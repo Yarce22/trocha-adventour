@@ -56,7 +56,7 @@ export const getRoutes = async (): Promise<Routes> => {
     step2: item?.fields.step2,
     step3: item?.fields.step3,
     imgStep1: item?.fields.imgStep1,
-    imgStep2: item?.fields.imgStep2,
+    imgStep2: item?.fields.imgSetp2,
     imgStep3: item?.fields.imgStep3,
     imgEnding: item?.fields.imgEnding,
   }))
@@ -72,7 +72,7 @@ export const getRoutes = async (): Promise<Routes> => {
   return transformRoutes[0] as unknown as Routes
 }
 
-export const getRoutesById = async (id: string): Promise<Route[]> => {
+export const getRoutesById = async (id: string): Promise<Route> => {
   const response = await contentfulClient.getEntries({
     content_type: 'route',
     'sys.id': id
@@ -82,7 +82,7 @@ export const getRoutesById = async (id: string): Promise<Route[]> => {
     throw new Error('No se encontraron rutas');
   }
 
-  return response.items[0].fields as unknown as Route[]
+  return response.items[0].fields as unknown as Route
 }
 
 export const getAllies = async (): Promise<Ally[]> => {
