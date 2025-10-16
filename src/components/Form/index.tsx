@@ -254,7 +254,7 @@ const Form: React.FC = () => {
                   <div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">Teléfono</h4>
                     <a href="tel:+573162345678" className="text-primary hover:text-primary/90 font-semibold text-lg transition-colors">
-                      +57 316 234 5678
+                      +57 319 361 8477
                     </a>
                     <p className="text-sm text-gray-500 mt-1">Lun - Dom: 7:00 AM - 8:00 PM</p>
                   </div>
@@ -310,7 +310,7 @@ const Form: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/trocha_adventour/"
                   className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="Instagram"
                 >
@@ -319,7 +319,7 @@ const Form: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="http://wa.me/573193618477"
                   className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="WhatsApp"
                 >

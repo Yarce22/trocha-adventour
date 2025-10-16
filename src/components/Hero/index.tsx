@@ -8,6 +8,7 @@ import 'swiper/css/effect-fade'
 
 const Hero: React.FC = async () => {
   const heroImgs = await getHeroImgs()
+  console.log(heroImgs)
 
   return (
     <section className="h-screen relative">
