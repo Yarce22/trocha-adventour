@@ -102,7 +102,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
           </ul>
 
           {/* CTA Button */}
-          <Link href="/contacto">
+          <Link href="#contacto">
             <button
               onClick={onClose}
               className="mt-8 w-full bg-primary hover:bg-primary/90 text-secondary font-semibold py-3.5 px-6 rounded-lg transition-colors duration-300 transform active:scale-95"
