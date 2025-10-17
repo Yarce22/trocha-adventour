@@ -45,7 +45,7 @@ const SliderImages: React.FC<{ sliderImages: HeroImg[] }> = ({ sliderImages }) =
             <div className="absolute w-full h-full flex flex-col gap-4 px-6 items-center justify-center bg-black/50 text-center">
               <h2 className="text-4xl font-bold text-white">{image.title}</h2>
               <h3 className="text-2xl font-semibold text-white">{image.subtitle}</h3>
-              <p className="text-white">{image.description}</p>
+              <p className="text-white lg:px-24">{image.description}</p>
 
               <div className="flex gap-4">
                 <Link href="/rutas">
