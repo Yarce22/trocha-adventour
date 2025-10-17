@@ -51,16 +51,16 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
 
       {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-sm bg-secondary shadow-2xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+        <div className="flex items-center justify-between p-6 border-b border-secondary">
           <Link
             href="/"
             onClick={onClose}
-            className="text-2xl font-bold text-green-600"
+            className="text-2xl font-bold text-primary"
           >
             Trocha Adventure
           </Link>
@@ -93,7 +93,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors duration-200"
+                  className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-primary hover:bg-secondary rounded-lg transition-colors duration-200"
                 >
                   {item.name}
                 </Link>
@@ -102,27 +102,29 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
           </ul>
 
           {/* CTA Button */}
-          <button
-            onClick={onClose}
-            className="mt-8 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3.5 px-6 rounded-lg transition-colors duration-300 transform active:scale-95"
-          >
-            Reservar ahora
-          </button>
+          <Link href="/contacto">
+            <button
+              onClick={onClose}
+              className="mt-8 w-full bg-primary hover:bg-primary/90 text-secondary font-semibold py-3.5 px-6 rounded-lg transition-colors duration-300 transform active:scale-95"
+            >
+              Reservar ahora
+            </button>
+          </Link>
 
           {/* Contact Info */}
-          <div className="mt-8 pt-8 border-t border-gray-200 space-y-4">
+          <div className="mt-8 pt-8 border-t border-secondary space-y-4">
             <div className="flex items-center gap-3 text-gray-600">
-              <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <span className="text-sm">+57 123 456 7890</span>
+              <span className="text-sm">+57 319 361 8477</span>
             </div>
             <div className="flex items-center gap-3 text-gray-600">
-              <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
-              <span className="text-sm">info@trockaadventure.com</span>
+              <span className="text-sm">trochaadventour@gmail.com</span>
             </div>
           </div>
 
@@ -130,7 +132,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
           <div className="mt-6 flex gap-4">
             <a
               href="#"
-              className="p-2.5 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-600 rounded-lg transition-colors"
+              className="p-2.5 bg-secondary hover:bg-green-100 text-gray-700 hover:text-primary rounded-lg transition-colors"
               aria-label="Facebook"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -138,8 +140,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
               </svg>
             </a>
             <a
-              href="#"
-              className="p-2.5 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-600 rounded-lg transition-colors"
+              href="https://www.instagram.com/trocha_adventour/"
+              className="p-2.5 bg-gray-100 hover:bg-primary/20 text-gray-700 hover:text-primary rounded-lg transition-colors"
               aria-label="Instagram"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -147,8 +149,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
               </svg>
             </a>
             <a
-              href="#"
-              className="p-2.5 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-green-600 rounded-lg transition-colors"
+              href="http://wa.me/573193618477"
+              className="p-2.5 bg-gray-100 hover:bg-green-100 text-gray-700 hover:text-primary rounded-lg transition-colors"
               aria-label="WhatsApp"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

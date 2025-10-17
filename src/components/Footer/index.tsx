@@ -1,24 +1,10 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/app/logo_trocha.svg'
 
 const Footer: React.FC = () => {
-  const [email, setEmail] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Aquí va la lógica de suscripción al newsletter
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    setEmail('')
-    setIsSubmitting(false)
-  }
 
   const navigationLinks = [
     { name: 'Inicio', href: '/' },
